@@ -121,7 +121,7 @@ impl epi::App for CQRApp {
             ui.label("Enter URL:");
             ui.text_edit_singleline(&mut self.url);
             ui.label("Cell Size:");
-            ui.add(egui::Slider::new(&mut self.cell_size, 1..=100).text("Cell Size"));
+            ui.add(egui::Slider::new(&mut self.cell_size, 2..=100).text("Cell Size"));
             if ui.button("Generate QR").clicked() {
                 let img = create_snaking_qr_grid(&self.url, self.cell_size);
                 let _path = "null_block_qr_grid.png";
